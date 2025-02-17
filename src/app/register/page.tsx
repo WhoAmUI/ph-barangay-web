@@ -17,6 +17,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import SuccessModal from "./success-modal";
 import ErrorModal from "./error-modal";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [step, setStep] = useState(1);
@@ -24,6 +25,7 @@ const Page = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [status, setStatus] = useState<"success" | "error" | "">("");
+  const router = useRouter();
 
   const { saveData, loadData, clearData } = useLocalStorage("formProgress");
   const savedData = loadData();
@@ -32,6 +34,17 @@ const Page = () => {
     resolver: zodResolver(schema),
     mode: "onChange",
   });
+
+  function onReset() {
+    setStep(1);
+    setIsModalOpen(false);
+    setIsSubmitting(false);
+    setIsLoading(false);
+    setStatus("");
+
+    router.push("/register");
+    window.location.reload();
+  }
 
   const { handleSubmit, trigger, getValues } = methods;
 
@@ -151,6 +164,10 @@ const Page = () => {
     }
   };
 
+  if (status === "success") return <SuccessModal onReset={onReset} />;
+
+  if (status === "error") return <ErrorModal />;
+
   return (
     <div className="max-w-xl mx-2 sm:mx-auto border bg-card text-card-foreground shadow min-h-96 my-4 rounded-xl p-4">
       <h1 className="font-bold text-2xl mb-4">Registration</h1>
@@ -185,9 +202,6 @@ const Page = () => {
             {step === 2 && <BarangayInformation />}
             {step === 3 && <DocumentUpload />}
 
-            {status === "success" && <SuccessModal />}
-            {status === "error" && <ErrorModal />}
-
             <div className="flex gap-2 justify-end mt-8">
               {step > 1 && (
                 <Button variant="outline" onClick={prevStep}>
@@ -219,6 +233,8 @@ const Page = () => {
     </div>
   );
 };
+
+export default Page;
 
 // Step 1
 export function PersonalInformation() {
@@ -487,5 +503,3 @@ const FileUpload = ({
     </div>
   );
 };
-
-export default Page;
