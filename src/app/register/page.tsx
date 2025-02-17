@@ -142,7 +142,7 @@ const Page = () => {
     } else {
       setIsLoading(false);
     }
-  }, []);
+  }, [savedData]);
 
   const onSubmit = async (data: FormData) => {
     try {
