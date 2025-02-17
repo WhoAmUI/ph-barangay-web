@@ -16,7 +16,7 @@ const SidebarLink = ({
       <Link
         href={href}
         className={clsx(
-          "flex items-center gap-2 my-2 px-2 py-2 rounded text-sm font-normal hover:bg-gray-800 focus:outline-purple-500 focus:outline-2 focus:outline-offset-4",
+          "flex items-center gap-2 my-2 px-2 py-2 rounded text-sm font-normal hover:bg-gray-800 focus-input",
           isActive && "bg-gray-800"
         )}
       >

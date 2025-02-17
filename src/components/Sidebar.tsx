@@ -12,7 +12,7 @@ const Sidebar = () => {
 
   return (
     <section className="h-fit md:h-full rounded p-4 bordered-wrapper">
-      <div className="flex justify-between items-center">
+      <div className="md:border-b md:border-b-gray-800 flex justify-between items-center">
         <Logo />
         <div
           className="flex md:hidden bordered-wrapper p-1 rounded"
