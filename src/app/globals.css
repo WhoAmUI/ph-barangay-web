@@ -70,14 +70,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
-/* Global Utility */
-@layer utilities {
-  .bordered-wrapper {
-    @apply border border-gray-800;
-
-    .focus-input {
-      @apply focus:outline-purple-500 focus:outline-2 focus:outline-offset-4;
-    }
-  }
-}

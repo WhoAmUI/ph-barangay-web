@@ -1,7 +1,13 @@
 import { Activity, FileText, Home as HomeIcon, Users } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { MainNav } from "@/components/main-nav";
 import { Overview } from "@/components/overview";
 import { RecentActivity } from "@/components/recent-activity";
@@ -31,27 +37,37 @@ export default function Home() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Total Residents</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Total Residents
+                </CardTitle>
                 <Users className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">5,231</div>
-                <p className="text-xs text-muted-foreground">+2.5% from last month</p>
+                <p className="text-xs text-muted-foreground">
+                  +2.5% from last month
+                </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Active Projects</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Active Projects
+                </CardTitle>
                 <Activity className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">12</div>
-                <p className="text-xs text-muted-foreground">3 completed this month</p>
+                <p className="text-xs text-muted-foreground">
+                  3 completed this month
+                </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Announcements</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Announcements
+                </CardTitle>
                 <FileText className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
@@ -61,12 +77,16 @@ export default function Home() {
             </Card>
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Households</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Households
+                </CardTitle>
                 <HomeIcon className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">1,429</div>
-                <p className="text-xs text-muted-foreground">+7 new registrations</p>
+                <p className="text-xs text-muted-foreground">
+                  +7 new registrations
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -82,7 +102,9 @@ export default function Home() {
             <Card className="col-span-3">
               <CardHeader>
                 <CardTitle>Recent Activity</CardTitle>
-                <CardDescription>Latest updates in the barangay</CardDescription>
+                <CardDescription>
+                  Latest updates in the barangay
+                </CardDescription>
               </CardHeader>
               <CardContent>
                 <RecentActivity />

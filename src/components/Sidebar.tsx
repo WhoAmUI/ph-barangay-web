@@ -1,11 +1,12 @@
 "use client";
-import Logo from "./Logo";
+import Logo from "./logo";
 import { CiGrid42 } from "react-icons/ci";
-import SidebarLink from "./SidebarLink";
-import Icon from "./Icon";
+
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useState } from "react";
 import clsx from "clsx";
+import SidebarLink from "./sidebarLink";
+import Icon from "./icon";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
